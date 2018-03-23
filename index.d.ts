@@ -1,5 +1,5 @@
 
-declare module 'ISO8601-duration' {
+declare module 'iso8601-duration' {
   export function parse(durationString: string): Duration;
   export function end(duration: Duration, startDate: Date): Date;
   export function toSeconds(duration: Duration, startDate: Date): number;
