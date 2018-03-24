@@ -14,8 +14,10 @@
   },
   "files": [
     "src/index.js",
-    "lib/index.js"
+    "lib/index.js",
+    "index.d.ts"
   ],
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tolu/ISO8601-duration.git"
