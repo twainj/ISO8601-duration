@@ -3,6 +3,7 @@ declare module 'iso8601-duration' {
   export function parse(durationString: string): Duration;
   export function end(duration: Duration, startDate: Date): Date;
   export function toSeconds(duration: Duration, startDate: Date): number;
+  export function toString(duration: Duration): string;
   export const pattern: RegExp;
 
   export class Duration {

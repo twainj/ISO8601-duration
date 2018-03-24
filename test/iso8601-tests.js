@@ -1,5 +1,5 @@
 import test from 'ava'
-import {parse, end, toSeconds, pattern} from '../src/index'
+import {parse, end, toSeconds, toString, pattern} from '../src/index'
 
 test('Parse: correctly parses data-time format', t => {
   const time = parse('P2Y4M6DT14H30M20.42S')
@@ -73,6 +73,18 @@ test('toSeconds: with supplied start date', t => {
   t.true(durFromJan > durFromFeb)
   t.is(durFromJan, expectedJanDuration)
   t.is(durFromFeb, expectedFebDuration)
+})
+
+test('toString: correctly prints duration string', t => {
+  const duration = toString({
+    years: 2,
+    months: 4,
+    days: 6,
+    hours: 14,
+    minutes: 30,
+    seconds: 20.42
+  })
+  t.is(duration, 'P2Y4M6DT14H30M20.42S')
 })
 
 test('usage example test', t => {

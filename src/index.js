@@ -74,9 +74,29 @@ export const toSeconds = (duration, startDate) => {
   return seconds
 }
 
+/** Create PnYnMnDTnHnMnS format string from object
+ *
+ * @param {Object} - With a property for each part of the pattern
+ * @return {string} durationString - PnYnMnDTnHnMnS formatted string
+ */
+export const toString = (duration) => {
+  return objMap.reduce(
+    (acc, mem) => {
+      var t = mem === 'hours' ? 'T' : ''
+      var el = ''
+      if (duration.hasOwnProperty(mem)) {
+        el = duration[mem] + mem[0].toUpperCase()
+      }
+      return acc + t + el
+    },
+    'P'
+  )
+}
+
 export default {
   end,
   toSeconds,
   pattern,
-  parse
+  parse,
+  toString
 }
